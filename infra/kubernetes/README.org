@@ -1,0 +1,13 @@
+#+TITLE: CNCF infra for the Kubernetes project on AWS
+
+* Maintaining
+** Initialising
+#+begin_src shell
+terraform import aws_organizations_organization.Root ID_HERE
+#+end_src
+
+** Migrating tfstate
+Uncomment the lines relating to backend under ~terraform~ and run the following commands
+#+begin_src shell
+terraform init
+#+end_src
