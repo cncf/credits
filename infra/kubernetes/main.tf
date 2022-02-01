@@ -65,7 +65,7 @@ resource "aws_organizations_organization" "Root" {
   }
 }
 
-// creating the org //
+// creating the org-unit //
 resource "aws_organizations_organizational_unit" "kubernetes" {
   name      = "kubernetes"
   parent_id = aws_organizations_organization.Root.id
