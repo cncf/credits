@@ -48,7 +48,7 @@ resource "aws_s3_bucket_ownership_controls" "cncf-credits-infra-kubernetes-tfsta
   bucket = aws_s3_bucket.cncf-credits-infra-kubernetes-tfstate.id
 
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    object_ownership = "BucketOwnerEnforced"
   }
 }
 resource "aws_s3_bucket_public_access_block" "cncf-credits-infra-kubernetes-tfstate" {
