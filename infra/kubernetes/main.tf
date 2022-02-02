@@ -23,6 +23,10 @@ provider "aws" {
 // the tfstate for the management of the kubernetes account+OU //
 resource "aws_kms_key" "cncf-credits-infra-kubernetes-tfstate" {
   description = "This key is used to encrypt bucket objects"
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 resource "aws_s3_bucket" "cncf-credits-infra-kubernetes-tfstate" {
   bucket = "cncf-credits-infra-kubernetes-tfstate"
@@ -47,12 +51,20 @@ resource "aws_s3_bucket" "cncf-credits-infra-kubernetes-tfstate" {
 resource "aws_s3_bucket_ownership_controls" "cncf-credits-infra-kubernetes-tfstate" {
   bucket = aws_s3_bucket.cncf-credits-infra-kubernetes-tfstate.id
 
+  lifecycle {
+    prevent_destroy = true
+  }
+
   rule {
     object_ownership = "BucketOwnerEnforced"
   }
 }
 resource "aws_s3_bucket_public_access_block" "cncf-credits-infra-kubernetes-tfstate" {
   bucket = aws_s3_bucket.cncf-credits-infra-kubernetes-tfstate.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 
   block_public_acls   = true
   block_public_policy = true
