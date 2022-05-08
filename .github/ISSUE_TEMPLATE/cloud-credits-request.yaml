@@ -36,7 +36,7 @@ body:
       placeholder: e.g. Kubernetes, Prometheus, Envoy...
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: resources
     attributes:
       label: The plan with the resources
