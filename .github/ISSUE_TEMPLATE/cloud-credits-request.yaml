@@ -1,0 +1,70 @@
+name: Cloud Credits Request
+description: Submit a request for credits for a project
+title: "Cloud Credits Request: "
+labels: ["request"]
+assignees:
+  - hh
+  - jeefy
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the details below to file a request for Cloud Credits from the CNCF.
+        Please note that access is targeted to people working on specific open source projects within the CNCF Ecosystem.
+        Additionally, if you require bare metal resources, please instead file a [CNCF Community Lab Cluster request](https://github.com/cncf/cluster/issues/new/choose)
+  - type: input
+    id: your-name
+    attributes:
+      label: First and Last Name
+      description: Please enter your full name
+      placeholder: e.g. John Smith
+    validations:
+      required: true
+  - type: input
+    id: your-email
+    attributes:
+      label: Email contact
+      description: Please enter your email address
+      placeholder: e.g. johnsmith@example.com
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: Which CNCF project are credits needed for?
+      placeholder: e.g. Kubernetes, Prometheus, Envoy...
+    validations:
+      required: true
+  - type: input
+    id: resources
+    attributes:
+      label: The plan with the resources
+      description: i.e., what is the detail of what you're planning to do with these resources?
+      placeholder: e.g. a cluster to run CI jobs, a sandbox project in the cloud provider
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Budget
+      description: Amount of credits needed, per-{week,month,year}
+      placeholder: e.g. $50/month, $200/year, $5/week
+    validations:
+      required: true
+  - type: input
+    id: providers
+    attributes:
+      label: Providers
+      description: The infrastructure provider to support the credits
+      placeholder: e.g. AWS, Azure, GCP, other...
+    validations:
+      required: true
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional information
+      description: Anything extra to note?
+      placeholder: From the email...
+    validations:
+      required: false
