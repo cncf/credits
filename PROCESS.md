@@ -13,7 +13,13 @@ repos:
 
 ## Management
 
-### Account creation
+Outline of management processes across cloud providers.
+
+### AWS
+
+Several CNCF projects consume AWS resources for several purposes, such as: testing, CI, hosting and more.
+
+#### Account creation
 
 New accounts are to be created in a structured form under org units for organization.
 
@@ -26,7 +32,9 @@ CNCF root account (org)
 ...
 ```
 
-#### Inside a project
+The provisioning of org units and
+
+##### Inside a project
 
 Some initial resources and configuration must be set up upon new account creation, these include
 
