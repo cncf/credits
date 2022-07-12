@@ -38,5 +38,17 @@ The provisioning of org units and accounts is performed manually, due to account
 
 Some initial resources and configuration must be set up upon new account creation, these include
 
-- initial IAM user(s)
-- audit trail policy
+- an IAM group[a]
+- an IAM policy[b] for the IAM group[a]
+- initial IAM user(s)[n] apart of the IAM group[a]
+- cloudtrail audit policy
+
+## Notes
+
+Future goals might include to have a cloud provider specific Terraform module for spinning up the basic for an account, e.g with AWS:
+
+- org unit
+  - account
+    - IAM role[a] with permissions for resources requested
+    - IAM user[n] (using IAM role[a])
+    - cloudtrail audit policy
