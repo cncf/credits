@@ -32,7 +32,7 @@ CNCF root account (org)
 ...
 ```
 
-The provisioning of org units and
+The provisioning of org units and accounts is performed manually, due to accounts requiring a level of interaction and the deletion of accounts with Terraform not being available (revisit this)
 
 ##### Inside a project
 
