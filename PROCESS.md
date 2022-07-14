@@ -43,6 +43,8 @@ Some initial resources and configuration must be set up upon new account creatio
 - initial IAM user(s)[n] apart of the IAM group[a]
 - cloudtrail audit policy
 
+Applying base resources and changes for accounts is managed in _infra/aws/terraform/accounts/[ACCOUNT]_.
+
 ## Notes
 
 Future goals might include to have a cloud provider specific Terraform module for spinning up the basic for an account, e.g with AWS:
