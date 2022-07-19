@@ -14,26 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-terraform {
-  backend "s3" {
-    bucket = "example-tfstate"
-    key    = "terraform.tfstate"
-    region = "ap-southeast-2"
-  }
+module "accounts" {
+  source = "./accounts"
 
-  required_providers {
-    aws = {
-      source                = "hashicorp/aws"
-      version               = "~> 3.0"
-      configuration_aliases = [aws.us-east-2]
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-west-1"
-
-  assume_role {
-    role_arn = "arn:aws:iam::ACCOUNTID_FILL_ME_IN_HERE:role/OrganizationAccountAccessRole"
+  providers = {
+    aws                                                              = aws
+    aws.accountid_fill_me_in_here-role-OrganizationAccountAccessRole = aws.accountid_fill_me_in_here-role-OrganizationAccountAccessRole
   }
 }

@@ -14,6 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+variable "project-alert-emails" {
+  type    = list(string)
+  default = ["example.cool@example.com"]
+}
+variable "global-alert-emails" {
+  type = list(string)
+}
+variable "project" {
+  type    = string
+  default = "example"
+}
+
 module "cloudtrail" {
   source = "../../reusables/cloudtrail"
 
@@ -21,5 +33,44 @@ module "cloudtrail" {
     aws = aws
   }
 
-  project = "example"
+  project = var.project
+}
+
+module "budget" {
+  source = "../../reusables/budget"
+
+  providers = {
+    aws = aws
+  }
+
+  project      = var.project
+  amount       = "100"
+  alert-emails = concat(var.global-alert-emails, var.project-alert-emails)
+}
+
+// permissions
+resource "aws_iam_group" "group" {
+  name = var.project
+}
+resource "aws_iam_policy" "policy" {
+  name        = "${var.project}-policy"
+  description = "A policy for group members in the project ${var.project}"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:ListAllMyBuckets",
+          "s3:*Object",
+          "s3:ListBucket"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+resource "aws_iam_group_policy_attachment" "policy-to-group" {
+  group      = aws_iam_group.group.name
+  policy_arn = aws_iam_policy.policy.arn
 }
