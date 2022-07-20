@@ -16,7 +16,7 @@ limitations under the License.
 
 variable "alert-emails" {
   type    = list(string)
-  default = ["jeefy@cncf.io"]
+  default = ["projects@cncf.io", "jeefy@cncf.io"]
 }
 
 module "cncf-credits-terraform-test" {
