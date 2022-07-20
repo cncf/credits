@@ -25,6 +25,10 @@ variable "project" {
   type    = string
   default = "cncf-credits-terraform-test"
 }
+variable "budget-usd" {
+  type    = string
+  default = "100"
+}
 
 module "cloudtrail" {
   source = "../../reusables/cloudtrail"
@@ -44,7 +48,7 @@ module "budget" {
   }
 
   project      = var.project
-  amount       = "100"
+  amount       = var.budget-usd
   alert-emails = concat(var.global-alert-emails, var.project-alert-emails)
 }
 
