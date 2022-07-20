@@ -36,9 +36,10 @@ provider "aws" {
 
 provider "aws" {
   region = "us-west-1"
-  alias  = "accountid_fill_me_in_here-role-OrganizationAccountAccessRole"
+  alias  = "account-187848499701-role-OrganizationAccountAccessRole"
 
+  # email: caleb+cncf-credits-terraform-test@ii.coop
   assume_role {
-    role_arn = "arn:aws:iam::ACCOUNTID_FILL_ME_IN_HERE:role/OrganizationAccountAccessRole"
+    role_arn = "arn:aws:iam::187848499701:role/OrganizationAccountAccessRole"
   }
 }

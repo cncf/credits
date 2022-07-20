@@ -19,11 +19,11 @@ variable "alert-emails" {
   default = ["jeefy@cncf.io"]
 }
 
-module "example" {
-  source = "./example"
+module "cncf-credits-terraform-test" {
+  source = "./cncf-credits-terraform-test"
 
   providers = {
-    aws = aws.accountid_fill_me_in_here-role-OrganizationAccountAccessRole
+    aws = aws.account-187848499701-role-OrganizationAccountAccessRole
   }
 
   global-alert-emails = var.alert-emails

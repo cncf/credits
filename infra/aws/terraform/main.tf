@@ -18,7 +18,7 @@ module "accounts" {
   source = "./accounts"
 
   providers = {
-    aws                                                              = aws
-    aws.accountid_fill_me_in_here-role-OrganizationAccountAccessRole = aws.accountid_fill_me_in_here-role-OrganizationAccountAccessRole
+    aws                                                         = aws
+    aws.account-187848499701-role-OrganizationAccountAccessRole = aws.account-187848499701-role-OrganizationAccountAccessRole
   }
 }

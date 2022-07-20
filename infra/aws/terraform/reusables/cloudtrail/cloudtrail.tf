@@ -20,18 +20,6 @@ variable "project" {
 
 data "aws_caller_identity" "current" {}
 
-resource "aws_cloudtrail" "cloudtrail" {
-  name                          = "cloudtrail-${var.project}"
-  s3_bucket_name                = aws_s3_bucket.bucket.id
-  include_global_service_events = true
-  enable_log_file_validation    = true
-
-  event_selector {
-    read_write_type           = "All"
-    include_management_events = true
-  }
-}
-
 resource "aws_s3_bucket" "bucket" {
   bucket = "cloudtrail-${var.project}"
 }
@@ -67,3 +55,21 @@ resource "aws_s3_bucket_policy" "policy" {
     ]
   })
 }
+
+resource "aws_cloudtrail" "cloudtrail" {
+  name                          = "cloudtrail-${var.project}"
+  s3_bucket_name                = aws_s3_bucket.bucket.id
+  include_global_service_events = true
+  enable_log_file_validation    = true
+
+  event_selector {
+    read_write_type           = "All"
+    include_management_events = true
+  }
+
+  depends_on = [
+    aws_s3_bucket.bucket,
+    aws_s3_bucket_policy.policy
+  ]
+}
+

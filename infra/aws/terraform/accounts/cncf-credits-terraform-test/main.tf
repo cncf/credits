@@ -16,14 +16,14 @@ limitations under the License.
 
 variable "project-alert-emails" {
   type    = list(string)
-  default = ["example.cool@example.com"]
+  default = ["caleb+cncf-credits-terraform-test@ii.coop"]
 }
 variable "global-alert-emails" {
   type = list(string)
 }
 variable "project" {
   type    = string
-  default = "example"
+  default = "cncf-credits-terraform-test"
 }
 
 module "cloudtrail" {
