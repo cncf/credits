@@ -32,9 +32,11 @@ CNCF root account (org)
 ...
 ```
 
-The provisioning of org units and accounts is performed manually, due to accounts requiring a level of interaction and the deletion of accounts with Terraform not being available (revisit this)
+The provisioning of org units and accounts is performed manually, due to accounts requiring a level of interaction and the deletion of accounts with Terraform not being available (revisit this).
 
-##### Inside a project
+The email address for the account should be cncf-$PROJECT-account@cncf.io (i.e: cncf-linkerd-account@cncf.io), it should be confirmed that there is access to the address.
+
+##### Inside a project's account
 
 Some initial resources and configuration must be set up upon new account creation, these include
 
@@ -42,15 +44,6 @@ Some initial resources and configuration must be set up upon new account creatio
 - an IAM policy[b] for the IAM group[a]
 - initial IAM user(s)[n] apart of the IAM group[a]
 - cloudtrail audit policy
+- budget
 
 Applying base resources and changes for accounts is managed in _infra/aws/terraform/accounts/[ACCOUNT]_.
-
-## Notes
-
-Future goals might include to have a cloud provider specific Terraform module for spinning up the basic for an account, e.g with AWS:
-
-- org unit
-  - account
-    - IAM role[a] with permissions for resources requested
-    - IAM user[n] (using IAM role[a])
-    - cloudtrail audit policy
