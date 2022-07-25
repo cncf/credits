@@ -43,3 +43,13 @@ provider "aws" {
     role_arn = "arn:aws:iam::187848499701:role/OrganizationAccountAccessRole"
   }
 }
+
+provider "aws" {
+  region = "us-west-1"
+  alias  = "account-LINKERD_REPLACE_ME-role-OrganizationAccountAccessRole"
+
+  # email: cncf-linkerd-aws-account@cncf.io
+  assume_role {
+    role_arn = "arn:aws:iam::LINKERD_REPLACE_ME:role/OrganizationAccountAccessRole"
+  }
+}
