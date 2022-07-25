@@ -18,7 +18,8 @@ module "accounts" {
   source = "./accounts"
 
   providers = {
-    aws                                                         = aws
-    aws.account-187848499701-role-OrganizationAccountAccessRole = aws.account-187848499701-role-OrganizationAccountAccessRole
+    aws                                                               = aws
+    aws.account-187848499701-role-OrganizationAccountAccessRole       = aws.account-187848499701-role-OrganizationAccountAccessRole
+    aws.account-LINKERD_REPLACE_ME-role-OrganizationAccountAccessRole = aws.account-LINKERD_REPLACE_ME-role-OrganizationAccountAccessRole
   }
 }
