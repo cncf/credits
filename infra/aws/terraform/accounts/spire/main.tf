@@ -27,7 +27,7 @@ variable "project" {
 }
 variable "budget-usd" {
   type    = string
-  default = "100"
+  default = "500"
 }
 
 module "cloudtrail" {
