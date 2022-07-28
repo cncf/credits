@@ -65,12 +65,22 @@ resource "aws_iam_policy" "policy" {
     Statement = [
       {
         Action = [
-          "s3:ListAllMyBuckets",
-          "s3:*Object",
-          "s3:ListBucket"
+          "ec2:*",
+          "kms:*",
+          "secretsmanager:*",
+          "acm-pca:*"
         ]
         Effect   = "Allow"
         Resource = "*"
+      },
+      {
+        Action = [
+          "iam:*"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+        Conditions = {
+        }
       },
     ]
   })
