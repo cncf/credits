@@ -75,12 +75,56 @@ resource "aws_iam_policy" "policy" {
       },
       {
         Action = [
-          "iam:*"
+          "iam:AddUserToGroup",
+          "iam:CreateAccessKey",
+          "iam:CreateGroup",
+          "iam:CreateRole",
+          "iam:CreateUser",
+          "iam:DeleteAccessKey",
+          "iam:DeleteGroup",
+          "iam:DeleteRole",
+          "iam:DeleteUser",
+          "iam:GetAccessKeyLastUsed",
+          "iam:GetAccountSummary",
+          "iam:GetLoginProfile",
+          "iam:GetPolicy",
+          "iam:GetPolicyVersion",
+          "iam:GetRole",
+          "iam:GetRolePolicy",
+          "iam:GetSSHPublicKey",
+          "iam:GetServiceLastAccessedDetails",
+          "iam:GetServiceLastAccessedDetailsWithEntities",
+          "iam:GetUser",
+          "iam:GetUserPolicy",
+          "iam:ListAccountAliases",
+          "iam:ListAttachedGroupPolicies",
+          "iam:ListAttachedRolePolicies",
+          "iam:ListAttachedUserPolicies",
+          "iam:ListGroupPolicies",
+          "iam:ListGroups",
+          "iam:ListPolicies",
+          "iam:ListPoliciesGrantingServiceAccess",
+          "iam:ListPolicyTags",
+          "iam:ListPolicyVersions",
+          "iam:ListRolePolicies",
+          "iam:ListRoleTags",
+          "iam:ListRoles",
+          "iam:ListUserTags",
+          "iam:ListUsers",
+          "iam:PassRole",
+          "iam:RemoveUserFromGroup",
+          "iam:TagPolicy",
+          "iam:TagRole",
+          "iam:TagUser",
+          "iam:UntagPolicy",
+          "iam:UntagRole",
+          "iam:UntagUser",
+          "iam:UpdateGroup",
+          "iam:UpdateRole",
+          "iam:UpdateUser"
         ]
         Effect   = "Allow"
         Resource = "*"
-        Conditions = {
-        }
       },
     ]
   })
