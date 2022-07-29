@@ -14,9 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+variable "user-email-addresses" {
+  type = list(string)
+  default = [
+    "azdagron@gmail.com",
+    "ryan.turner253@icloud.com",
+    "amartinezfayo@gmail.com",
+    "evan2645@gmail.com",
+    "marcosyacob@gmail.com"
+  ]
+}
 variable "project-alert-emails" {
-  type    = list(string)
-  default = ["cncf-spire-account-admin@cncf.io"]
+  type = list(string)
+  default = [
+    "cncf-spire-account-admin@cncf.io",
+
+    // TODO project access users
+  ]
 }
 variable "global-alert-emails" {
   type = list(string)
@@ -132,4 +146,16 @@ resource "aws_iam_policy" "policy" {
 resource "aws_iam_group_policy_attachment" "policy-to-group" {
   group      = aws_iam_group.group.name
   policy_arn = aws_iam_policy.policy.arn
+}
+
+resource "aws_iam_user" "users" {
+  for_each = toset(var.user-email-addresses)
+  name     = each.value
+}
+resource "aws_iam_group_membership" "users-to-group" {
+  name = "users-to-group"
+
+  users = toset(var.user-email-addresses)
+
+  group = aws_iam_group.group.name
 }
