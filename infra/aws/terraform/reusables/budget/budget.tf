@@ -28,13 +28,29 @@ variable "alert-emails" {
 
 variable "threshold" {
   type    = number
-  default = 100
+  default = 75
 }
 
 resource "aws_budgets_budget" "project-budget" {
   name         = "budget-${var.project}-monthly"
   budget_type  = "COST"
   limit_amount = var.amount
+  limit_unit   = "USD"
+  time_unit    = "MONTHLY"
+
+  notification {
+    comparison_operator        = "GREATER_THAN"
+    threshold                  = var.threshold
+    threshold_type             = "PERCENTAGE"
+    notification_type          = "FORECASTED"
+    subscriber_email_addresses = var.alert-emails
+  }
+}
+
+resource "aws_budgets_budget" "project-budget-ceiling" {
+  name         = "budget-${var.project}-monthly-ceiling"
+  budget_type  = "COST"
+  limit_amount = 100
   limit_unit   = "USD"
   time_unit    = "MONTHLY"
 
