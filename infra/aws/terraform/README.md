@@ -5,7 +5,7 @@
 Prepare a bucket for tfstate
 
 ```bash
-aws s3 mb s3://example-tfstate
+aws s3 mb s3://cncf-credits-tfstate
 ```
 
 Initialize terraform
