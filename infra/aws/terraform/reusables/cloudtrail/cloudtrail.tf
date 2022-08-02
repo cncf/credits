@@ -61,6 +61,7 @@ resource "aws_cloudtrail" "cloudtrail" {
   s3_bucket_name                = aws_s3_bucket.bucket.id
   include_global_service_events = true
   enable_log_file_validation    = true
+  is_multi_region_trail         = true
 
   event_selector {
     read_write_type           = "All"
