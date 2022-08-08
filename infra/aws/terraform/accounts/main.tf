@@ -33,7 +33,7 @@ module "cncf-linkerd" {
   source = "./linkerd"
 
   providers = {
-    aws = aws.account-LINKERD_REPLACE_ME-role-OrganizationAccountAccessRole
+    aws = aws.account-594604573825-role-OrganizationAccountAccessRole
   }
 
   global-alert-emails = var.alert-emails
