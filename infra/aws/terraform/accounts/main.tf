@@ -43,7 +43,7 @@ module "cncf-spire" {
   source = "./spire"
 
   providers = {
-    aws = aws.account-SPIRE_REPLACE_ME-role-OrganizationAccountAccessRole
+    aws = aws.account-496856297140-role-OrganizationAccountAccessRole
   }
 
   global-alert-emails = var.alert-emails

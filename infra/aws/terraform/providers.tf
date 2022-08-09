@@ -56,10 +56,10 @@ provider "aws" {
 
 provider "aws" {
   region = "us-west-1"
-  alias  = "account-SPIRE_REPLACE_ME-role-OrganizationAccountAccessRole"
+  alias  = "account-496856297140-role-OrganizationAccountAccessRole"
 
   # email: cncf-spire-account-admin@cncf.io
   assume_role {
-    role_arn = "arn:aws:iam::SPIRE_REPLACE_ME:role/OrganizationAccountAccessRole"
+    role_arn = "arn:aws:iam::496856297140:role/OrganizationAccountAccessRole"
   }
 }

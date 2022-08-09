@@ -18,9 +18,9 @@ module "accounts" {
   source = "./accounts"
 
   providers = {
-    aws                                                             = aws
-    aws.account-187848499701-role-OrganizationAccountAccessRole     = aws.account-187848499701-role-OrganizationAccountAccessRole
-    aws.account-594604573825-role-OrganizationAccountAccessRole     = aws.account-594604573825-role-OrganizationAccountAccessRole
-    aws.account-SPIRE_REPLACE_ME-role-OrganizationAccountAccessRole = aws.account-SPIRE_REPLACE_ME-role-OrganizationAccountAccessRole
+    aws                                                         = aws
+    aws.account-187848499701-role-OrganizationAccountAccessRole = aws.account-187848499701-role-OrganizationAccountAccessRole
+    aws.account-594604573825-role-OrganizationAccountAccessRole = aws.account-594604573825-role-OrganizationAccountAccessRole
+    aws.account-496856297140-role-OrganizationAccountAccessRole = aws.account-496856297140-role-OrganizationAccountAccessRole
   }
 }
