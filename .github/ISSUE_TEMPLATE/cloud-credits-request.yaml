@@ -9,9 +9,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the details below to file a request for Cloud Credits from the CNCF.
-        Please note that access is targeted to people working on specific open source projects within the CNCF Ecosystem.
-        Additionally, if you require bare metal resources, please instead file a [CNCF Community Lab Cluster request](https://github.com/cncf/cluster/issues/new/choose)
+        Please complete this form to request Cloud Credits from the CNCF. 
+        Access to Cloud Credits is limited to maintainers of CNCF-hosted projects.  
+        For bare metal resources, please file a [CNCF Community Lab Cluster request](https://github.com/cncf/cluster/issues/new/choose)
   - type: input
     id: your-name
     attributes:
@@ -56,7 +56,7 @@ body:
     id: provider
     attributes:
       label: Provider
-      description: The infrastructure provider to support the credits
+      description: Select the infrastructure provider where you require the credits 
       options:
         - aws
         - gcp
