@@ -60,7 +60,7 @@ module "budget" {
 
   project      = var.project
   amount       = var.budget-usd
-  alert-emails = concat(var.global-alert-emails, var.project-alert-emails)
+  alert-emails = concat(var.global-alert-emails, var.project-alert-emails, var.user-email-addresses)
 }
 
 // permissions
