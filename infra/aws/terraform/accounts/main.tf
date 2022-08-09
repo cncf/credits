@@ -28,3 +28,13 @@ module "cncf-credits-terraform-test" {
 
   global-alert-emails = var.alert-emails
 }
+
+module "cncf-linkerd" {
+  source = "./linkerd"
+
+  providers = {
+    aws = aws.account-594604573825-role-OrganizationAccountAccessRole
+  }
+
+  global-alert-emails = var.alert-emails
+}

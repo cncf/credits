@@ -20,5 +20,6 @@ module "accounts" {
   providers = {
     aws                                                         = aws
     aws.account-187848499701-role-OrganizationAccountAccessRole = aws.account-187848499701-role-OrganizationAccountAccessRole
+    aws.account-594604573825-role-OrganizationAccountAccessRole = aws.account-594604573825-role-OrganizationAccountAccessRole
   }
 }
