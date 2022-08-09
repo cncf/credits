@@ -38,3 +38,13 @@ module "cncf-linkerd" {
 
   global-alert-emails = var.alert-emails
 }
+
+module "cncf-spire" {
+  source = "./spire"
+
+  providers = {
+    aws = aws.account-496856297140-role-OrganizationAccountAccessRole
+  }
+
+  global-alert-emails = var.alert-emails
+}

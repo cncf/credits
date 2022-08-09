@@ -53,3 +53,13 @@ provider "aws" {
     role_arn = "arn:aws:iam::594604573825:role/OrganizationAccountAccessRole"
   }
 }
+
+provider "aws" {
+  region = "us-west-1"
+  alias  = "account-496856297140-role-OrganizationAccountAccessRole"
+
+  # email: cncf-spire-account-admin@cncf.io
+  assume_role {
+    role_arn = "arn:aws:iam::496856297140:role/OrganizationAccountAccessRole"
+  }
+}
