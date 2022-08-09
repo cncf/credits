@@ -52,12 +52,16 @@ body:
       placeholder: e.g. $50/month, $200/year, $5/week
     validations:
       required: true
-  - type: input
-    id: providers
+  - type: dropdown
+    id: provider
     attributes:
-      label: Providers
+      label: Provider
       description: The infrastructure provider to support the credits
-      placeholder: e.g. AWS, Azure, GCP, other...
+      options:
+        - aws
+        - gcp
+        - azure
+        - equinix metal
     validations:
       required: true
   - type: textarea
