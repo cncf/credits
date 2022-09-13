@@ -58,10 +58,11 @@ body:
       label: Provider
       description: Select the infrastructure provider where you require the credits 
       options:
-        - aws
-        - gcp
-        - azure
-        - equinix metal
+        - AWS
+        - GCP
+        - Azure
+        - Equinix
+        - DigitalOcean
     validations:
       required: true
   - type: textarea
