@@ -89,6 +89,7 @@ resource "aws_iam_policy" "policy" {
         Action = [
           "iam:AddRoleToInstanceProfile",
           "iam:AddUserToGroup",
+          "iam:ChangePassword",
           "iam:CreateAccessKey",
           "iam:CreateGroup",
           "iam:CreateInstanceProfile",
